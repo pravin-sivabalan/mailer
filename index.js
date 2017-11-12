@@ -7,6 +7,7 @@ const csvFilePath = process.argv[2];
 
 let transporter = nodemailer.createTransport(config);
 
+// csv header format first, last, email, url
 csv().fromFile(csvFilePath).on('json', (person) => {
   fs.readFile('template.html', 'utf8', (err, content) => {
 
