@@ -1,0 +1,12 @@
+{
+    "host": "smtp-mail.outlook.com",
+    "secureConnection": false,
+    "port": 587,
+    "auth": {
+        "user": "",
+        "pass": ""
+    },
+    "tls": {
+        "ciphers": "SSLv3"
+    }
+}
