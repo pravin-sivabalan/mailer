@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport(config);
 csv().fromFile(csvFilePath).on('json', (person) => {
   fs.readFile('template.html', 'utf8', (err, content) => {
 
-    const link = 'http://interview.boilermake.org/invite' + person.url.substring(person.url.lastIndexOf('/'));
+    const link = 'http://interview.boilermake.org/interview' + person.url.substring(person.url.lastIndexOf('/'));
     content = content.replace('#{name}', person.first);
     content = content.replace('#{link}', link);
     content = content.replace('#{link}', link);
@@ -19,7 +19,7 @@ csv().fromFile(csvFilePath).on('json', (person) => {
     let mailOptions = {
       from: '"BoilerMake Team" <psivabal@purdue.edu>',
       to: person.email,
-      subject: 'BoilerMake Exec Team Interview',
+      subject: 'THIS IS A TEST: BoilerMake Exec Team Interview',
       html: content
     };
 
